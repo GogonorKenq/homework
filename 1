@@ -1,0 +1,10 @@
+sum = 0
+obsh = 0
+with open("average.txt", 'r') as izn:
+    for i in izn:
+        sum += int(i)
+        obsh += 1
+ot = str(sum / obsh)
+
+with open("text.txt", 'w') as otvet:
+    otvet.write(ot)
