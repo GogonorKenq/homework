@@ -24,8 +24,7 @@ print(imgs)
 n=1
 for i in imgs:
     z = i['src']
-
+    n += 1
     images = r.get('http://diafilmy.su/' + z)
     with open('diafilm' + str(n) + '.jpg', 'wb') as f:
         f.write(images.content)
-    n += 1
