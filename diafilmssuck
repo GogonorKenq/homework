@@ -1,0 +1,20 @@
+from bs4 import BeautifulSoup
+import requests as r
+
+
+url='http://diafilmy.su/7074-ajbolit.html'
+
+page = r.get(url)
+
+if page.ok:
+    print('norm')
+
+soup = BeautifulSoup(page.text, 'html.parser')
+show = soup.find('div', class_ = 'cycle-slideshow')
+imgs = show.findAll('img')
+for i in imgs:
+    print(i['src'])
+
+images = r.get('QWERTY')
+with open('new_image.png', 'wb') as f:
+    f.write(images.content)
