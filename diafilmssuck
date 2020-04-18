@@ -10,11 +10,19 @@ if page.ok:
     print('norm')
 
 soup = BeautifulSoup(page.text, 'html.parser')
+print(soup)
 show = soup.find('div', class_ = 'cycle-slideshow')
+print(show)
 imgs = show.findAll('img')
+print(imgs)
 for i in imgs:
     print(i['src'])
 
-images = r.get('QWERTY')
-with open('new_image.png', 'wb') as f:
-    f.write(images.content)
+z=i['src']
+
+print(imgs)
+
+for i in imgs:
+    images = r.get('http://diafilmy.su/' + 'z')
+    with open('diafilm.jpg', 'wb') as f:
+        f.write(images.content)
