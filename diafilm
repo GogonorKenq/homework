@@ -2,7 +2,8 @@ from bs4 import BeautifulSoup
 import requests as r
 
 
-url='http://diafilmy.su/7074-ajbolit.html'
+a=input('ssilka_')
+url=str(a)
 
 page = r.get(url)
 
@@ -18,11 +19,13 @@ print(imgs)
 for i in imgs:
     print(i['src'])
 
-z=i['src']
 
 print(imgs)
-
+n=1
 for i in imgs:
-    images = r.get('http://diafilmy.su/' + 'z')
-    with open('diafilm.jpg', 'wb') as f:
+    z = i['src']
+
+    images = r.get('http://diafilmy.su/' + z)
+    with open('diafilm' + str(n) + '.jpg', 'wb') as f:
         f.write(images.content)
+    n += 1
