@@ -1,0 +1,21 @@
+import math as m
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+h = int(input('vvedi visotu, suka '))
+g = 10
+
+x = m.sqrt(2*h / g)
+y = g*x
+
+
+fig , ax = plt.subplots()
+
+x = np.linspace(0, x)
+y = np.linspace(0, y)
+
+ax.plot(x, y, 'b')
+plt.show()
+print(x)
+print(y)
