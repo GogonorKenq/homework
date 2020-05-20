@@ -1,0 +1,14 @@
+sum = 0
+obsh = 0
+with open("chisla.txt", 'r') as izn:
+    for i in izn:
+        print(i)
+        for j in i:
+            g = sum(i)
+            print(g)
+            '''sum += int(j)
+            obsh += 1'''
+ot = str(sum / obsh)
+
+with open("text.txt", 'w') as otvet:
+    otvet.write(ot)
